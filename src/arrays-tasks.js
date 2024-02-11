@@ -494,8 +494,11 @@ function getHexRGBValues(/* arr */) {
  *   getMaxItems([ 10, 2, 7, 5, 3, -5 ], 3) => [ 10, 7, 5 ]
  *   getMaxItems([ 10, 10, 10, 10 ], 3) => [ 10, 10, 10 ]
  */
-function getMaxItems(/* arr, n */) {
-  throw new Error('Not implemented');
+function getMaxItems(arr, n) {
+  const sorted = arr.sort((a, b) => {
+    return a - b;
+  });
+  return sorted.slice(-n).reverse();
 }
 
 /**
@@ -527,6 +530,16 @@ function findCommonElements(/* arr1, arr2 */) {
  */
 function findLongestIncreasingSubsequence(/* nums */) {
   throw new Error('Not implemented');
+  // let prev = null;
+  // return (
+  //   nums.reduce((a, c) => {
+  //     if (c <= prev) {
+  //       return a;
+  //     }
+  //     prev = c;
+  //     return a + 1;
+  //   }, 0) + 1
+  // );
 }
 
 /**
